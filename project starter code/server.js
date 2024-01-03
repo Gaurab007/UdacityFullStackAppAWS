@@ -28,7 +28,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util.js';
   //   the filtered image file [!!TIP res.sendFile(filteredpath); might be useful]
 
     /**************************************************************************** */
-
+hi
   //! END @TODO1
   
   // Root Endpoint
