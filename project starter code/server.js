@@ -1,4 +1,4 @@
-import express from 'express';aws 
+import express from 'express';
 import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util.js';
 
@@ -28,7 +28,26 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util.js';
   //   the filtered image file [!!TIP res.sendFile(filteredpath); might be useful]
 
     /**************************************************************************** */
-hi2
+  app.get("/filteredimage", async(req, res) => {
+    try {
+      const image_url = req.query.image_url.toString();
+
+      if (!image_url) {
+        res.status(404).send("Image url is not found");
+      } else {
+        const filteredimage = await filterImageFromURL(image_url);
+        console.log(filteredimage);
+        res.status(200).sendFile(filteredimage);
+
+        res.on('finish' , () => {
+          deleteLocalFiles([filteredimage]);
+        });
+      }      
+    } catch (error) {
+      console.log("error: ", error);
+      res.status(500).send("undefined Error");
+    }
+  });
   //! END @TODO1
   
   // Root Endpoint
