@@ -1,4 +1,4 @@
-import express from 'express';
+import express from 'express';aws 
 import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util.js';
 
@@ -28,7 +28,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util.js';
   //   the filtered image file [!!TIP res.sendFile(filteredpath); might be useful]
 
     /**************************************************************************** */
-hi
+hi2
   //! END @TODO1
   
   // Root Endpoint
